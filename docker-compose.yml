@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  db:
+    image: mariadb:latest
+    ports:
+      - 3306:3306
+    volumes:
+      - /local:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_PASSWORD=password
+      - MYSQL_USER=user
+      - MYSQL_DATABASE=databasename
+    restart: always
